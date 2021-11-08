@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        CC = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
