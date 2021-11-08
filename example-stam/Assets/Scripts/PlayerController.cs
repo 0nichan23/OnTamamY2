@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController CC;
     public Animator Anim;
     public float MovementSpeed = 10;
-    LayerMask layer;
+    //LayerMask layer;
     private GameObject TheCamera;
     private GameObject Cockroach;
 
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
             CC.Move(-Cockroach.transform.forward * MovementSpeed * Time.deltaTime);
             walk = true;
         }
-        else if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             CC.Move(Cockroach.transform.right * MovementSpeed * Time.deltaTime);
             walk = true;
@@ -107,11 +107,11 @@ public class PlayerController : MonoBehaviour
         else Anim.SetBool("OnFloor", false);
     }
 
-    void Climb()
+  /*  void Climb()
     {
         if (gameObject.layer == layer)
         {
             //attach player to the layer as long as its on itב
         }
-    }
+    }*/
 }
