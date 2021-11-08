@@ -238,8 +238,79 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cockroach
       objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: f721ebcd7e3bc8746b60ecb6543c1e8b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000028141589
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: f721ebcd7e3bc8746b60ecb6543c1e8b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15028605
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: f721ebcd7e3bc8746b60ecb6543c1e8b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.98864263
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: f721ebcd7e3bc8746b60ecb6543c1e8b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000001851268
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: f721ebcd7e3bc8746b60ecb6543c1e8b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -162.713
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: f721ebcd7e3bc8746b60ecb6543c1e8b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: f721ebcd7e3bc8746b60ecb6543c1e8b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: f721ebcd7e3bc8746b60ecb6543c1e8b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.047
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f721ebcd7e3bc8746b60ecb6543c1e8b, type: 3}
+--- !u!1 &948168174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 948168175}
+  m_Layer: 0
+  m_Name: Tripod
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &948168175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948168174}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1994633812}
+  m_Father: {fileID: 1376572304}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1136919919
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +321,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1136919920}
   - component: {fileID: 1136919921}
-  - component: {fileID: 1136919922}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -270,7 +340,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2120024686}
-  - {fileID: 1994633812}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -286,26 +355,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d87cc2456757e4ca43dd31cbcef8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CC: {fileID: 0}
+  CC: {fileID: 1189417188}
   MovementSpeed: 5
---- !u!143 &1136919922
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumY: -60
+  maximumY: 60
+  JumpPower: 2
+  JumpTime: 0.5
+  Gravity: 5
+--- !u!1 &1189417187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f721ebcd7e3bc8746b60ecb6543c1e8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 623470239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &1189417188
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136919919}
+  m_GameObject: {fileID: 1189417187}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0.3
-  m_Radius: 0.2
+  m_Height: 0.1
+  m_Radius: 0.1
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.17, z: 0.1}
+--- !u!1 &1376572303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1376572304}
+  m_Layer: 0
+  m_Name: CameraHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1376572304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376572303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 948168175}
+  m_Father: {fileID: 2120024686}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994633811
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +432,7 @@ GameObject:
   - component: {fileID: 1994633813}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -331,13 +444,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994633811}
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 0.4, z: -0.4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1136919920}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_Father: {fileID: 948168175}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &1994633813
 AudioListener:
   m_ObjectHideFlags: 0
@@ -369,7 +482,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
