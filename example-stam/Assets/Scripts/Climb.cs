@@ -1,26 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Climb : MonoBehaviour
 {
     CharacterController Cc;
-    bool inside = false;
+    public bool inside = false;
     public float speed = 3.2f;
     PlayerController Player;
     Animator ani;
     void Start()
     {
         Player = transform.parent.GetComponent<PlayerController>();
-        ani = Player.GetComponent<Animator>();
+        ani = GetComponent<Animator>();
         inside = false;
         Cc = GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        if (inside)
+        if (inside == true)
         {
+            Debug.Log("inside");
             Climbing();
         }
     }
@@ -28,7 +27,7 @@ public class Climb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("sadw");
+      
         if (other.gameObject.tag == "Climbable")
         {
             Player.enabled = false;
@@ -39,7 +38,7 @@ public class Climb : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("sadw");
+        
         if (other.gameObject.tag == "Climbable")
         {
             Player.enabled = true;
