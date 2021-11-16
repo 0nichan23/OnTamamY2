@@ -6,7 +6,7 @@ public class Food : MonoBehaviour
 { 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             Debug.Log("food eaten");
             Destroy(this.gameObject);
