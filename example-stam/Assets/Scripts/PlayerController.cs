@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float maximumY = 60F;
     float rotationX = 0F;
     float rotationY = 0F;
+    public float CameraDistance=0.5f;
 
     public float JumpTime = 0.5f;
     public float JumpPower = 2;
@@ -76,9 +77,13 @@ public class PlayerController : MonoBehaviour
         Cockroach.transform.localRotation = Quaternion.Euler(new Vector3(0, rotationX, 0));
         TheCamera.transform.parent.parent.localRotation = Quaternion.Euler(new Vector3(-rotationY, 0, 0));
         RaycastHit hit;
-        if (Physics.Raycast(TheCamera.transform.parent.parent.position, TheCamera.transform.parent.parent.TransformDirection(Vector3.back), out hit, 0.5f, CameraLayerMask))
+        if (Physics.Raycast(TheCamera.transform.parent.parent.position, TheCamera.transform.parent.parent.TransformDirection(Vector3.back), out hit, CameraDistance, CameraLayerMask))
         {
             TheCamera.transform.parent.position = hit.point;
+        }
+        else
+        {
+            TheCamera.transform.parent.position = TheCamera.transform.parent.parent.position + TheCamera.transform.parent.parent.TransformDirection(Vector3.back) * CameraDistance;
         }
     }
     void Jump()
